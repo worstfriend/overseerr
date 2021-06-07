@@ -12,6 +12,8 @@ import { getAppVersion, getCommitTag } from '../utils/appVersion';
 import authRoutes from './auth';
 import collectionRoutes from './collection';
 import discoverRoutes from './discover';
+import issueRoutes from './issue';
+import issueCommentRoutes from './issueComment';
 import mediaRoutes from './media';
 import movieRoutes from './movie';
 import personRoutes from './person';
@@ -106,6 +108,8 @@ router.use('/media', isAuthenticated(), mediaRoutes);
 router.use('/person', isAuthenticated(), personRoutes);
 router.use('/collection', isAuthenticated(), collectionRoutes);
 router.use('/service', isAuthenticated(), serviceRoutes);
+router.use('/issue', isAuthenticated(), issueRoutes);
+router.use('/issueComment', isAuthenticated(), issueCommentRoutes);
 router.use('/auth', authRoutes);
 
 router.get('/regions', isAuthenticated(), async (req, res) => {
